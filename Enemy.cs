@@ -8,9 +8,6 @@ namespace Robe
 {
     internal class Enemy : Entity
     {
-        private int Health { get; set; }
-        private int APower { get; set; }
-
         public Enemy(int health, int apower, string name) : base(health, apower, name)
         {
         }

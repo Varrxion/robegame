@@ -28,14 +28,14 @@ namespace Robe
         }
 
         public int GetHealth() { return Health; }
-        public void SetHealth(int health) { Health = health; }
+        private void SetHealth(int health) { Health = health; }
         public int GetAPower() { return APower; }
-        public void SetAPower(int apower) { APower = apower; }
+        private void SetAPower(int apower) { APower = apower; }
 
-        public void SetName(String name) { Name = name; }
+        private void SetName(String name) { Name = name; }
         public String GetName() { return Name; }
 
-        public virtual int Attack()
+        public virtual int Attack() //redundant function but keep for now
         {
             return GetAPower();
         }

@@ -14,15 +14,12 @@ namespace Robe
             Enemy[] enemies = new Enemy[5];
             enemies[0] = enemy;
 
-            Console.Write("\n\n\n\n\n");
-            Graphics.DrawBattle(player, enemies);
-            Console.Write("\n\n\n\n\n");
+            Coordinator.Battle(player, enemies);
+        }
 
-            enemy.TakeDamage(player.Attack());
+        static void Turn()
+        {
 
-            Console.WriteLine(player.Attack());
-
-            enemy.PrintStats();
         }
     }
 }
