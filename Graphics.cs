@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Robe
 {
-    internal class Graphics
+    public static class Graphics
     {
-        public void DrawTitle() {
+        public static void DrawTitle() {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
             Console.WriteLine(""" ___    ________________________________________   ___""");
@@ -21,13 +21,13 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
-        public void DrawTitleOptions()
+        public static void DrawTitleOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
         }
 
-        public void DrawBattle(Entity player, Entity[] Enemy)
+        public static void DrawBattle(Entity player, Entity[] Enemy)
         {
             //if (Enemy.Length > 5){
             //    throw new Exception("Too many enemies, max is 5");
@@ -66,13 +66,13 @@ namespace Robe
             
         }
 
-        public void DrawBattleOptions()
+        public static void DrawBattleOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/ATTACK (1)/          /DEFEND (2)/          /ITEM (3)/""");
         }
 
-        public void DrawDeathScreen()
+        public static void DrawDeathScreen()
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
@@ -85,7 +85,7 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
-        public void DrawDeathScreenOptions()
+        public static void DrawDeathScreenOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
