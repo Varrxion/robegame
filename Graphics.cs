@@ -8,24 +8,29 @@ namespace Robe
 {
     internal class Graphics
     {
-        public void DrawTitle()
-        {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            console.WriteLine(""" ___    ________________________________________   ___""");
-            console.WriteLine(""" \  \   \______  \   / ___\  |   ___ \|   _____/   \  \""");
-            console.WriteLine("""  \  \   |      _/  /  | | \ |   |_|_/|   ____/     \  \""");
-            console.WriteLine("""   |  )  |    |  \ /   |_|  \|   |_| \|       \      |  )""");
-            console.WriteLine("""  /__/   |____| \_\\______  /|______  /|______ \    /__/""");
-            console.WriteLine(""" /__/        \/           \/        \/        \/   /__/""");
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+        public void DrawTitle() {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine(""" ___    ________________________________________   ___""");
+            Console.WriteLine(""" \  \   \______  \   / ___\  |   ___ \|   _____/   \  \""");
+            Console.WriteLine("""  \  \   |      _/  /  | | \ |   |_|_/|   ____/     \  \""");
+            Console.WriteLine("""   |  )  |    |  \ /   |_|  \|   |_| \|       \      |  )""");
+            Console.WriteLine("""  /__/   |____| \_\\______  /|______  /|______ \    /__/""");
+            Console.WriteLine(""" /__/        \/           \/        \/        \/   /__/""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
+<<<<<<< Updated upstream
         public void DrawTitleOptions()
         {
             console.WriteLine(""" ______________________________________________________""");
             console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
+=======
+        public void DrawOptions() {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
+>>>>>>> Stashed changes
         }
 
         public void DrawBattle(Entity player, Entity[] Enemy)
