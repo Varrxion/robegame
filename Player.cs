@@ -12,16 +12,17 @@ namespace Robe
 
         public Player(int health, int apower) : base(health, apower)
         {
+            Name = "Player";
         }
 
-        public void Calcdamage(int rawdamage)
+        public void CalcDamage(int rawdamage)
         {
             int truedamage = rawdamage - Defense;
             if (truedamage < 0)
             {
                 truedamage = 0;
             }
-            Takedamage(truedamage);
+            TakeDamage(truedamage);
         }
     }
 }

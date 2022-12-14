@@ -64,63 +64,8 @@ namespace Robe
             console.WriteLine("//////////////////////////////////////////////");
             console.WriteLine("//////////////////////////////////////////////");
             console.WriteLine("//////////////////////////////////////////////");
-            
-        }
-
-        public void DrawBattleOptions()
-        {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/ATTACK (1)/          /DEFEND (2)/          /ITEM (3)/""");
-        }
-
-        public void DrawDeathScreen()
-        {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            console.WriteLine("""    _______   _      _       _       _____   _   _ """);
-            console.WriteLine("""    |  ___|  / \    | |     | |     | ____| | \ | |""");
-            console.WriteLine("""    | |_    / _ \   | |     | |     |  _|   |  \| |""");
-            console.WriteLine("""    |  _|  / ___ \  | |___  | |___  | |___  | |\  |""");
-            console.WriteLine("""    |_|   /_/   \_\ |_____| |_____| |_____| |_| \_|""");
             console.WriteLine(""" ______________________________________________________""");
             console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
-
-        public void DrawDeathScreenOptions()
-        {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
-        }
-
-        //public void DrawEvent()
-        //{
-        //
-        //}
-
-        //public void DrawEventOptions()
-        //{
-        //
-        //}
-
-        //public void DrawSettings()
-        //{
-        //
-        //}
-
-        //public void DrawSettingsOptions()
-        //{
-        //
-        //}
-
-        //public void DrawInventory()
-        //{
-        //
-        //}
-
-        //public void DrawInventoryOptions()
-        //{
-        //
-        //}
-
     }
 }

@@ -89,7 +89,7 @@ namespace Robe
         public void DrawDeathScreenOptions()
         {
             console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+            console.WriteLine("""/RESTART (1)/          /QUIT (2)/""");
         }
 
         //public void DrawEvent()
