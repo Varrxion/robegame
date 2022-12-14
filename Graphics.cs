@@ -21,16 +21,10 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
-<<<<<<< Updated upstream
         public void DrawTitleOptions()
         {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
-=======
-        public void DrawOptions() {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
->>>>>>> Stashed changes
         }
 
         public void DrawBattle(Entity player, Entity[] Enemy)
@@ -44,57 +38,57 @@ namespace Robe
             //}
             
             
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
 
-            console.Write($"{player.GetName()} ");
+            Console.Write($"{player.GetName()} ");
             foreach(Entity enemy in Enemy)
             {
-                console.Write($"{enemy.GetName()} ");
+                Console.Write($"{enemy.GetName()} ");
             }
-            console.WriteLine("");
+            Console.WriteLine("");
 
-            console.Write($"HP:{player.GetHealth()} ");
+            Console.Write($"HP:{player.GetHealth()} ");
             foreach(Entity enemy in Enemy)
             {
-                console.Write($"HP:{enemy.GetHealth()} ");
+                Console.Write($"HP:{enemy.GetHealth()} ");
             }
-            console.WriteLine("");
-            console.Write($"AP:{player.GetAPower()} ");
+            Console.WriteLine("");
+            Console.Write($"AP:{player.GetAPower()} ");
             foreach(Entity enemy in Enemy)
             {
-                console.Write($"AP:{enemy.GetAPower()} ");
+                Console.Write($"AP:{enemy.GetAPower()} ");
             }
-            console.WriteLine("");
-            console.WriteLine("//////////////////////////////////////////////");
-            console.WriteLine("//////////////////////////////////////////////");
-            console.WriteLine("//////////////////////////////////////////////");
+            Console.WriteLine("");
+            Console.WriteLine("//////////////////////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////");
+            Console.WriteLine("//////////////////////////////////////////////");
             
         }
 
         public void DrawBattleOptions()
         {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/ATTACK (1)/          /DEFEND (2)/          /ITEM (3)/""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/ATTACK (1)/          /DEFEND (2)/          /ITEM (3)/""");
         }
 
         public void DrawDeathScreen()
         {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            console.WriteLine("""    _______   _      _       _       _____   _   _ """);
-            console.WriteLine("""    |  ___|  / \    | |     | |     | ____| | \ | |""");
-            console.WriteLine("""    | |_    / _ \   | |     | |     |  _|   |  \| |""");
-            console.WriteLine("""    |  _|  / ___ \  | |___  | |___  | |___  | |\  |""");
-            console.WriteLine("""    |_|   /_/   \_\ |_____| |_____| |_____| |_| \_|""");
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine("""    _______   _      _       _       _____   _   _ """);
+            Console.WriteLine("""    |  ___|  / \    | |     | |     | ____| | \ | |""");
+            Console.WriteLine("""    | |_    / _ \   | |     | |     |  _|   |  \| |""");
+            Console.WriteLine("""    |  _|  / ___ \  | |___  | |___  | |___  | |\  |""");
+            Console.WriteLine("""    |_|   /_/   \_\ |_____| |_____| |_____| |_| \_|""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
         public void DrawDeathScreenOptions()
         {
-            console.WriteLine(""" ______________________________________________________""");
-            console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
         }
 
         //public void DrawEvent()

@@ -14,8 +14,6 @@ namespace Robe
 			Console.WriteLine(player.Attack());
 
 			enemy.PrintStats();
-
-			Console.WriteLine("TEST");
 		}
 	}
 }
