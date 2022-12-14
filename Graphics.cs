@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Robe
 {
-    public static class Graphics
+    internal static class Graphics
     {
-        public static void DrawTitle() {
+        public static void DrawTitle()
+        {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
             Console.WriteLine(""" ___    ________________________________________   ___""");
@@ -27,7 +28,7 @@ namespace Robe
             Console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
         }
 
-        public static void DrawBattle(Entity player, Entity[] Enemy)
+        public static void DrawBattle(Player player, Enemy[] enemies)
         {
             //if (Enemy.Length > 5){
             //    throw new Exception("Too many enemies, max is 5");
@@ -36,34 +37,43 @@ namespace Robe
             //if (Enemy.Length < 1){
             //    throw new Exception("Not enough enemies, min is 1");
             //}
-            
-            
+
+
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
 
-            Console.Write($"{player.GetName()} ");
-            foreach(Entity enemy in Enemy)
+            Console.Write($"{player.GetName()} | ");
+            foreach (Enemy enemy in enemies)
             {
-                Console.Write($"{enemy.GetName()} ");
+                if (enemy != null)
+                {
+                    Console.Write($"{enemy.GetName()} ");
+                }
             }
             Console.WriteLine("");
 
-            Console.Write($"HP:{player.GetHealth()} ");
-            foreach(Entity enemy in Enemy)
+            Console.Write($"HP:{player.GetHealth()} | ");
+            foreach (Enemy enemy in enemies)
             {
-                Console.Write($"HP:{enemy.GetHealth()} ");
+                if (enemy != null)
+                {
+                    Console.Write($"HP:{enemy.GetHealth()} ");
+                }                
             }
             Console.WriteLine("");
-            Console.Write($"AP:{player.GetAPower()} ");
-            foreach(Entity enemy in Enemy)
+            Console.Write($"AP:{player.GetAPower()} | ");
+            foreach (Enemy enemy in enemies)
             {
-                Console.Write($"AP:{enemy.GetAPower()} ");
+                if (enemy != null)
+                {
+                    Console.Write($"AP:{enemy.GetAPower()} ");
+                }                
             }
             Console.WriteLine("");
             Console.WriteLine("//////////////////////////////////////////////");
             Console.WriteLine("//////////////////////////////////////////////");
             Console.WriteLine("//////////////////////////////////////////////");
-            
+
         }
 
         public static void DrawBattleOptions()

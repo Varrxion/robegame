@@ -11,7 +11,7 @@ namespace Robe
         private int Health { get; set; }
         private int APower { get; set; }
 
-        public Enemy(int health, int apower) : base(health, apower)
+        public Enemy(int health, int apower, string name) : base(health, apower, name)
         {
         }
 

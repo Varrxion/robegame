@@ -11,19 +11,27 @@ namespace Robe
         private int Health;
         private int APower;
 
-        public String Name;
+        public string Name;
 
-        public Entity(int health, int apower)
+        public Entity(int health, int apower, string name)
         {
             Health = health;
             APower = apower;
+            if (name != null)
+            {
+                Name = name;
+            }
+            else
+            {
+                Name = "SomeName";
+            }
         }
 
         public int GetHealth() { return Health; }
         public void SetHealth(int health) { Health = health; }
         public int GetAPower() { return APower; }
         public void SetAPower(int apower) { APower = apower; }
-        
+
         public void SetName(String name) { Name = name; }
         public String GetName() { return Name; }
 
