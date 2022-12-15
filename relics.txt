@@ -1,0 +1,4 @@
+Relic Reference
+
+relic[0]: FireRelic {deal 50% more damage}
+relic[1]: FrostRelic {take 50% less damage}
