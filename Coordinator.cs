@@ -1,4 +1,6 @@
-﻿using System;
+﻿//The Coordinator is a static entity which controls the game.
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -69,6 +71,17 @@ namespace Robe
             {
                 Console.WriteLine("Battle over because enemies died.");
             }
+            Console.WriteLine("Press Enter to Continue to Rewards");
+            Console.ReadLine();
+            Rewards(false); // We will assume no bosses yet
+        }
+
+        public static void Rewards(bool boss)
+        {
+            Graphics.Wipe();
+            int totalgold = Inventory.GetGold() + GenerateGold(boss);
+            Inventory.SetGold(totalgold);
+            Graphics.DrawVictoryRewards(totalgold, "NONE");
         }
 
         public static void Turn(Player player, List<Enemy> enemies)
@@ -150,6 +163,7 @@ namespace Robe
             }
         }
 
+        //Generators
         public static int GenerateEnemyHealth()
         {
             CalculateDiffCoef();
@@ -158,6 +172,17 @@ namespace Robe
         public static int GenerateEnemyAPower()
         {
             return (int)Math.Floor(rand.Next(5, 20) * DiffCoef);
+        }
+        public static int GenerateGold(bool boss)
+        {
+            if (boss == false)
+            {
+                return rand.Next(10, 20);
+            }
+            else
+            {
+                return rand.Next(70, 100);
+            }
         }
         public static string GenerateEnemyName()
         {
@@ -185,6 +210,7 @@ namespace Robe
 
         }
 
+        //Difficulty
         private static void CalculateDiffCoef()
         {
             if (KillCounter <= 100) //each kill below 100 adds 5%
