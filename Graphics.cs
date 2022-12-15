@@ -38,41 +38,57 @@ namespace Robe
             //    throw new Exception("Not enough enemies, min is 1");
             //}
 
+            const int PADDING = 11;
+            string[] Temp = new string[5];
+
+            int i = 0;
+            foreach (Enemy enemy in enemies)
+            {
+               
+                if (enemy != null)
+                {
+                    Temp[i] = enemy.GetName().ToString();
+                }
+                i++;
+            }
+            i = 0;
+            Console.WriteLine($"{Temp[0],PADDING}{Temp[1],PADDING}{Temp[2],PADDING}{Temp[3],PADDING}{Temp[4],PADDING}");
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy != null)
+                {
+                    Temp[i] = "HP:" + enemy.GetHealth().ToString();
+                }
+                i++;
+            }
+
+            i = 0;
+            Console.WriteLine($"{Temp[0],PADDING}{Temp[1],PADDING}{Temp[2],PADDING}{Temp[3],PADDING}{Temp[4],PADDING}");
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy != null)
+                {
+                    Temp[i] = "AP:" + enemy.GetAPower().ToString();
+                }
+                i++;
+            }
+
+
+            Console.WriteLine($"{Temp[0],PADDING}{Temp[1],PADDING}{Temp[2],PADDING}{Temp[3],PADDING}{Temp[4],PADDING}");
+
+           
+
 
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-
-            Console.Write($"{player.GetName()} | ");
-            foreach (Enemy enemy in enemies)
-            {
-                if (enemy != null)
-                {
-                    Console.Write($"{enemy.GetName()} ");
-                }
-            }
             Console.WriteLine("");
 
-            Console.Write($"HP:{player.GetHealth()} | ");
-            foreach (Enemy enemy in enemies)
-            {
-                if (enemy != null)
-                {
-                    Console.Write($"HP:{enemy.GetHealth()} ");
-                }                
-            }
+            Console.WriteLine($"{player.GetName()}".PadRight(PADDING, ' ').PadRight(54, '/'));
+            Console.WriteLine($"HP:{player.GetHealth()}".PadRight(PADDING, ' ').PadRight(54, '/')) ;
+            Console.WriteLine($"AP:{player.GetAPower()}".PadRight(PADDING, ' ').PadRight(54, '/'));
+
             Console.WriteLine("");
-            Console.Write($"AP:{player.GetAPower()} | ");
-            foreach (Enemy enemy in enemies)
-            {
-                if (enemy != null)
-                {
-                    Console.Write($"AP:{enemy.GetAPower()} ");
-                }                
-            }
-            Console.WriteLine("");
-            Console.WriteLine("//////////////////////////////////////////////");
-            Console.WriteLine("//////////////////////////////////////////////");
-            Console.WriteLine("//////////////////////////////////////////////");
+            
 
         }
 
