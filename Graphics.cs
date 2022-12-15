@@ -136,12 +136,13 @@ namespace Robe
             Console.WriteLine($"{"GOLD:" + gold.ToString(),15}{"RELIC:" + relic,PADDING}");
 
         }
-
+        /*
         public static void DrawVictoryOptions() 
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/COLLECT ALL (1)/                        /CONTINUE (2)/""");
         }
+        */
 
         //public void DrawEvent()
         //{
