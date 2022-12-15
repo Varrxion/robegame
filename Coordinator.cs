@@ -30,7 +30,7 @@ namespace Robe
             }
             else
             {
-                Console.WriteLine("Battle over becuase enemies died.");
+                Console.WriteLine("Battle over because enemies died.");
             }
         }
 
