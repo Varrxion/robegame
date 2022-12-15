@@ -1,4 +1,11 @@
-Relic Reference
+Note that this file in the git folder does nothing, it must be in the same folder as the executable to work.
 
-relic[0]: FireRelic {deal 50% more damage}
-relic[1]: FrostRelic {take 50% less damage}
+FireRelic :Increases damage dealt by 50%
+WaterRelic :Decreases damage dealt by 50%
+EarthRelic :Increases healing by 50%
+AirRelic :Increases speed by 50%
+LightRelic :Increases resistance to poison by 50%
+DarkRelic :Increases resistance to curse by 50%
+FrostRelic :Increases resistance to chill by 50%
+KeyRelic :Increases luck by 50%
+DeathRelic :You cannot be killed from full health

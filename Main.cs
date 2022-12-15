@@ -27,6 +27,9 @@ namespace Robe
             //Graphics.DrawVictoryRewards(5, "FireRelic");
 
             Coordinator.Battle(player, enemies);
+            Graphics.Wipe();
+
+            Graphics.DrawRelicDescription("FireRelic");
         }
     }
 }
