@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Robe
 {
     internal static class Inventory
     {
-        public static int RelicPoolSize;
         private static int Gold = 0;
         //private static bool[] Relics = new bool[RelicPoolSize];
 
@@ -29,7 +24,6 @@ namespace Robe
             RelicPool.Add("KeyRelic", false);
             RelicPool.Add("LightRelic", false);
             RelicPool.Add("DarkRelic", false);
-            RelicPoolSize = RelicPool.Count();
         }
 
 
@@ -37,15 +31,10 @@ namespace Robe
         //Gold
         public static int GetGold() { return Gold; }
         public static void SetGold(int gold) { Gold = gold; }
-        //Relics
 
+        //Relics
         public static bool GetRelic(string relic) { return RelicPool[relic]; }
         public static void SetRelic(string relic, bool has) { RelicPool[relic] = has; }
-
-        // Less verbose methods, effectively do the same thing as SetRelic, but nice to have
-
-        public static void AddRelic(string relic) { RelicPool[relic] = true; }
-        public static void RemoveRelic(string relic) { RelicPool[relic] = false; }
 
         public static List<string> GetActiveRelics() {
             int i = 0;
