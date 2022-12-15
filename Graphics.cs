@@ -112,7 +112,7 @@ namespace Robe
         public static void DrawDeathScreenOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+            Console.WriteLine("""/RESTART (1)/                                /QUIT (z)/""");
         }
 
         public static void DrawVictoryScreen() 

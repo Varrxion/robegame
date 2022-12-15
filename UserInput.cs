@@ -10,21 +10,41 @@ namespace Robe
     {
         public static string OneTwoThreeSelection()
         {
-            bool validinput = false;
-            string userinput = "";
-            while (validinput == false)
+            bool ValidInput = false;
+            string UserInput = "";
+            while (ValidInput == false)
             {
-                userinput = Console.ReadLine();
-                if(userinput=="1" || userinput=="2" || userinput == "3")
+                UserInput = Console.ReadLine();
+                if(UserInput=="1" || UserInput=="2" || UserInput == "3")
                 {
-                    validinput = true;
+                    ValidInput = true;
                 }
                 else
                 {
                     Graphics.ClearLine();
                 }
             }
-            return userinput;
+            return UserInput;
+        }
+
+        public static string OneOrZSelection()
+        {
+            bool ValidInput = false;
+            string UserInput = "";
+            while (ValidInput == false)
+            {
+                UserInput = Console.ReadLine();
+                if (UserInput == "1" || UserInput == "z")
+                {
+                    ValidInput = true;
+                }
+                else
+                {
+                    Graphics.ClearLine();
+                }
+            }
+            return UserInput;
+
         }
     }
 }

@@ -28,35 +28,23 @@ namespace Robe
 
                 if (!Coordinator.PlayerDead)
                 {
-                    Console.WriteLine("NEXT BATTLE (1)                    QUIT (2)");
-                    PostBattleInput = Console.ReadLine();
-                    while (PostBattleInput != "1" && PostBattleInput != "2")
-                    {
-                        Graphics.ClearLine();
-                        //Console.WriteLine(PostBattleInput);
-                        PostBattleInput = Console.ReadLine();
-                    }
+                    Console.WriteLine("NEXT BATTLE (1)                    QUIT (z)");
+                    PostBattleInput = UserInput.OneOrZSelection();
                     Graphics.Wipe();
                     if (PostBattleInput == "2")
                     {
                         Quit = true;
                     }
-                    else if (PostBattleInput == "1")
+                    else if (PostBattleInput == "z")
                     {
                         // Do nothing
                     }
                 }
                 else
                 {
-                    PostBattleInput = Console.ReadLine();
-                    while (PostBattleInput != "1" && PostBattleInput != "2")
-                    {
-                        Graphics.ClearLine();
-                        //Console.WriteLine(PostBattleInput);
-                        PostBattleInput = Console.ReadLine();
-                    }
+                    PostBattleInput = UserInput.OneOrZSelection();
                     Graphics.Wipe();
-                    if (PostBattleInput == "2")
+                    if (PostBattleInput == "z")
                     {
                         Quit = true;
                     }
