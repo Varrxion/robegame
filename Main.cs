@@ -16,7 +16,7 @@ namespace Robe
 
             Quit = Coordinator.Title();
 
-            string quit = "";
+            string PostBattleInput;
             while (Quit == false && Coordinator.PlayerDead == false)
             {
                 enemy = new Enemy(Coordinator.GenerateEnemyHealth(), Coordinator.GenerateEnemyAPower(), Coordinator.GenerateEnemyName());
@@ -26,12 +26,47 @@ namespace Robe
 
                 Coordinator.Battle(player, enemies);
 
-                Console.WriteLine("Press Enter to Continue to next battle");
-                quit = Console.ReadLine();
-                Graphics.Wipe();
-                if (quit == "quit" || quit=="Quit")
+                if (!Coordinator.PlayerDead)
                 {
-                    Quit = true;
+                    Console.WriteLine("NEXT BATTLE (1)                    QUIT (2)");
+                    PostBattleInput = Console.ReadLine();
+                    while (PostBattleInput != "1" && PostBattleInput != "2")
+                    {
+                        Graphics.ClearLine();
+                        //Console.WriteLine(PostBattleInput);
+                        PostBattleInput = Console.ReadLine();
+                    }
+                    Graphics.Wipe();
+                    if (PostBattleInput == "2")
+                    {
+                        Quit = true;
+                    }
+                    else if (PostBattleInput == "1")
+                    {
+                        // Do nothing
+                    }
+                }
+                else
+                {
+                    PostBattleInput = Console.ReadLine();
+                    while (PostBattleInput != "1" && PostBattleInput != "2")
+                    {
+                        Graphics.ClearLine();
+                        //Console.WriteLine(PostBattleInput);
+                        PostBattleInput = Console.ReadLine();
+                    }
+                    Graphics.Wipe();
+                    if (PostBattleInput == "2")
+                    {
+                        Quit = true;
+                    }
+                    else if (PostBattleInput == "1")
+                    {
+                        Coordinator.Reset(player);
+                        Graphics.Wipe();
+                        Graphics.DrawTitle();
+                        Thread.Sleep(2000);
+                    }
                 }
             }
 

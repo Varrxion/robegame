@@ -37,7 +37,7 @@ namespace Robe
 
             if (Inventory.GetRelic("FrostRelic")) //do damage halfing AFTER defense is applied
             {
-                truedamage = (int)Math.Ceiling(truedamage/2.0); //Damage reduction is ROUNDED UP
+                truedamage = (int)Math.Ceiling(truedamage / 2.0); //Damage reduction is ROUNDED UP
             }
             base.TakeDamage(truedamage);
         }

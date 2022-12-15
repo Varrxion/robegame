@@ -26,7 +26,7 @@ namespace Robe
         }
 
         public int GetHealth() { return Health; }
-        private void SetHealth(int health) { Health = health; }
+        public void SetHealth(int health) { Health = health; }
         public int GetAPower() { return APower; }
         private void SetAPower(int apower) { APower = apower; }
 

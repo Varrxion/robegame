@@ -70,16 +70,20 @@ namespace Robe
                 // Console.WriteLine("Battle over because player died.");
                 Graphics.DrawDeathScreen();
                 Graphics.DrawDeathScreenOptions();
+                
             }
             else
             {
                 //Console.WriteLine("Battle over because enemies died.");
                 Graphics.DrawVictoryScreen();
-                Graphics.DrawVictoryOptions();
+                //Graphics.DrawVictoryOptions();
             }
-            Console.WriteLine("Press Enter to Continue to Rewards");
-            Console.ReadLine();
-            Rewards(false); // We will assume no bosses yet
+            if (!PlayerDead)
+            {
+                Console.WriteLine("SEE REWARDS (ENTER)");
+                Console.ReadLine();
+                Rewards(false);// We will assume no bosses yet
+            }
         }
 
         public static void Rewards(bool boss)
@@ -228,6 +232,16 @@ namespace Robe
             {
                 DiffCoef = 6 + (KillCounter-100) * 0.20; //this is the death wall.
             }
+        }
+
+        public static void Reset(Player player)
+        {
+            PlayerDead = false;
+            EnemiesDead = false;
+            KillCounter = 0;
+            DiffCoef = 1.0;
+            Inventory.SetGold(0);
+            player.SetHealth(1000);
         }
 
     }
