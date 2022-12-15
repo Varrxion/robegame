@@ -133,7 +133,7 @@ namespace Robe
             const int PADDING = 30;
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            Console.WriteLine($"{"GOLD:" + gold.ToString(),15}{"RELIC:" + relic,PADDING}");
+            Console.WriteLine($"{"GOLD:" + gold.ToString(),PADDING/2}{"RELIC:" + relic,PADDING}");
 
         }
         /*
