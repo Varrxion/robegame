@@ -101,6 +101,27 @@ namespace Robe
         }
         public static string GenerateEnemyName()
         {
+            int temp = rand.Next(1, 5);
+            if (temp == 1)
+            {
+                return "Goblin";
+            }
+            else if (temp == 2)
+            {
+                return "Troll";
+            }
+            else if (temp == 3)
+            {
+                return "Evil Wizard";
+            }
+            else if (temp == 4)
+            {
+                return "Demon";
+            }
+            else //should not be possible
+            {
+                return "MISSINGNO"; 
+            }
 
         }
 
