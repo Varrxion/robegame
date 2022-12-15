@@ -21,6 +21,7 @@ namespace Robe
             Console.ReadLine();
             Graphics.Wipe();
 
+            string quit = "";
             while (Quit == false)
             {
                 enemy = new Enemy(Coordinator.GenerateEnemyHealth(), Coordinator.GenerateEnemyAPower(), Coordinator.GenerateEnemyName());
@@ -28,11 +29,16 @@ namespace Robe
                 enemies.Clear(); // One enemy always for now
                 enemies.Add(enemy);
 
+                Graphics.DrawBattle(player, enemies);
                 Coordinator.Battle(player, enemies);
 
                 Console.WriteLine("Press Enter to Continue to next battle");
-                Console.ReadLine();
+                quit=Console.ReadLine();
                 Graphics.Wipe();
+                if (quit == "quit" || quit=="Quit")
+                {
+                    Quit = true;
+                }
             }
 
         }

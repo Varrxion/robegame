@@ -26,7 +26,7 @@ namespace Robe
             Console.WriteLine("""/START (1)/          /SETTINGS (2)/          /QUIT (3)/""");
         }
 
-        public static void DrawBattle(Player player, Enemy[] enemies)
+        public static void DrawBattle(Player player, List<Enemy> enemies)
         {
             //if (Enemy.Length > 5){
             //    throw new Exception("Too many enemies, max is 5");

@@ -28,8 +28,13 @@ namespace Robe
             while(PlayerDead==false && EnemiesDead == false)
             {
                 Turn(player, enemies);
-                PrintAll(player, enemies); //just for debug
+                //PrintAll(player, enemies); //just for debug
                 CheckDead(player, enemies);
+                Console.WriteLine("Press enter to continue fighting"); //these two lines just for debug
+                Console.ReadLine();
+
+                Graphics.Wipe();
+                Graphics.DrawBattle(player, enemies);
             }
             if (PlayerDead && EnemiesDead)
             {
