@@ -18,7 +18,6 @@ namespace Robe
             relicDict.Add("FrostRelic", "Increases resistance to chill by 50%");
             relicDict.Add("KeyRelic", "Increases luck by 50%");
             relicDict.Add("DeathRelic", "You cannot be killed from full health");
-            MakeRelicsFile();
         }
         public static void MakeRelicsFile()
         {
