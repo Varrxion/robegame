@@ -109,6 +109,12 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
+        public static void DrawDeathScreenOptions()
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+        }
+
         public static void DrawVictoryScreen() 
         {
             Console.WriteLine(""" ______________________________________________________""");
@@ -120,12 +126,6 @@ namespace Robe
             Console.WriteLine("""    |  V  | |  | /   \_   |  |  |  |  ||    \ |___  |""");
             Console.WriteLine("""     \   /  |  | \     |  |  |  |     ||     \|     |""");
             Console.WriteLine("""      \_/  |____| \____|  |__|   \___/ |__|\_||____/""");
-        }
-
-        public static void DrawDeathScreenOptions()
-        {
-            Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
         }
 
         public static void DrawVictoryRewards(int gold, string relic)

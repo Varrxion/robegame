@@ -9,7 +9,7 @@ namespace Robe
             MakeRelics.MakeRelicsFile();
             bool Quit = false;
 
-            Player player = new Player(1000, 10, "Player");
+            Player player = new Player(100, 10, "Player");
             List<Enemy> enemies = new List<Enemy>();
             enemies.Capacity = 5;
             Enemy enemy;
