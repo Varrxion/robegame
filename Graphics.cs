@@ -109,6 +109,12 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
+        public static void DrawDeathScreenOptions()
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+        }
+
         public static void DrawVictoryScreen() 
         {
             Console.WriteLine(""" ______________________________________________________""");
@@ -122,12 +128,6 @@ namespace Robe
             Console.WriteLine("""      \_/  |____| \____|  |__|   \___/ |__|\_||____/""");
         }
 
-        public static void DrawDeathScreenOptions()
-        {
-            Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
-        }
-
         public static void DrawVictoryRewards(int gold, string relic)
         {
             const int PADDING = 30;
@@ -136,12 +136,13 @@ namespace Robe
             Console.WriteLine($"{"GOLD:" + gold.ToString(),PADDING/2}{"RELIC:" + relic,PADDING}");
 
         }
-
+        /*
         public static void DrawVictoryOptions() 
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/COLLECT ALL (1)/                        /CONTINUE (2)/""");
         }
+        */
 
         //public void DrawEvent()
         //{

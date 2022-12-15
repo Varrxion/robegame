@@ -58,16 +58,14 @@ namespace Robe
                 CheckDead(player, enemies);
             }
             Graphics.Wipe();
-            Graphics.DrawBattle(player, enemies);
+            //Graphics.DrawBattle(player, enemies);
             if (PlayerDead && EnemiesDead)
             {
-                //Console.WriteLine("Battle over because everyone died."); //this should be impossible right now, but self damage attacks might be added
                 Graphics.DrawDeathScreen();
                 Graphics.DrawDeathScreenOptions();
             }
             else if (PlayerDead)
             {
-                // Console.WriteLine("Battle over because player died.");
                 Graphics.DrawDeathScreen();
                 Graphics.DrawDeathScreenOptions();
                 
@@ -92,6 +90,7 @@ namespace Robe
             int gold = GenerateGold(boss);
             int totalgold = Inventory.GetGold() + gold;
             Inventory.SetGold(totalgold);
+            Graphics.DrawVictoryScreen();
             Graphics.DrawVictoryRewards(gold, "NONE");
         }
 
