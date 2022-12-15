@@ -33,7 +33,7 @@ namespace Robe
                 Coordinator.Battle(player, enemies);
 
                 Console.WriteLine("Press Enter to Continue to next battle");
-                quit=Console.ReadLine();
+                quit = Console.ReadLine();
                 Graphics.Wipe();
                 if (quit == "quit" || quit=="Quit")
                 {

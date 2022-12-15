@@ -221,24 +221,31 @@ namespace Robe
         // relic_name :relic_description
         public static void DrawRelicDescription(string relic)
         {
-            string output = "Not found";
-            string line;
-            StreamReader file = new StreamReader("relics.txt");
-            while ((line = file.ReadLine()) != null)
+            try
             {
-                if (line.StartsWith(relic))
+                string output = "Not found";
+                string line;
+                StreamReader file = new StreamReader("relics.txt");
+                while ((line = file.ReadLine()) != null)
                 {
-                    output = relic + line.Substring(relic.Length + 1);
-                    break;
+                    if (line.StartsWith(relic))
+                    {
+                        output = relic + line.Substring(relic.Length + 1);
+                        break;
+                    }
                 }
+                file.Close();
+
+                Console.WriteLine(""" ______________________________________________________""");
+                Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+                Console.WriteLine(output);
+                Console.WriteLine(""" ______________________________________________________""");
+                Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
             }
-            file.Close();
-            
-            Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            Console.WriteLine(output);
-            Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            catch
+            {
+                Console.WriteLine("COULD NOT FIND relics.txt");
+            }
         }
         
         public static void DrawRelicDescriptionOptions()
