@@ -6,22 +6,35 @@ namespace Robe
 {
     internal static class Coordinator
     {
-        private static bool playerdead = false;
-        private static bool enemiesdead = false;
+        private static bool PlayerDead;
+        private static bool EnemiesDead;
+        private static int KillCounter; //used to determine difficulty
+        private static double DiffCoef;
+
+        static Random rand;
+
+        static Coordinator()
+        {
+            PlayerDead = false;
+            EnemiesDead = false;
+            KillCounter = 0;
+            DiffCoef = 1.0;
+            rand = new Random();
+        }
 
         public static void Battle(Player player, Enemy[] enemies)
         {
-            while(playerdead==false && enemiesdead == false)
+            while(PlayerDead==false && EnemiesDead == false)
             {
                 Turn(player, enemies);
-                printall(player, enemies); //just for debug
+                PrintAll(player, enemies); //just for debug
                 CheckDead(player, enemies);
             }
-            if (playerdead && enemiesdead)
+            if (PlayerDead && EnemiesDead)
             {
                 Console.WriteLine("Battle over because everyone died."); //this should be impossible right now, but self damage attacks might be added
             }
-            else if (playerdead)
+            else if (PlayerDead)
             {
                 Console.WriteLine("Battle over because player died.");
             }
@@ -48,21 +61,25 @@ namespace Robe
         {
             if (player.GetHealth() <= 0)
             {
-                playerdead = true;
+                PlayerDead = true;
             }
 
-            enemiesdead = true; //assume enemies are dead until check proves otherwise
+            EnemiesDead = true; //assume enemies are dead until check proves otherwise
 
             foreach (Enemy enemy in enemies)
             {
                 if (enemy != null && enemy.GetHealth() > 0)
                 {
-                    enemiesdead = false;
+                    EnemiesDead = false;
                 }
+            }
+            if (EnemiesDead)
+            {
+                KillCounter++;
             }
         }
 
-        public static void printall(Player player, Enemy[] enemies) //this function will intentionally become deprecated
+        public static void PrintAll(Player player, Enemy[] enemies) //this function will intentionally become deprecated
         {
             player.PrintStats();
             foreach (Enemy enemy in enemies)
@@ -74,6 +91,30 @@ namespace Robe
             }
         }
 
-        
+        public static int GenerateEnemyHealth()
+        {
+            return (int)Math.Floor(rand.Next(30, 60) * DiffCoef);
+        }
+        public static int GenerateEnemyAPower()
+        {
+            return (int)Math.Floor(rand.Next(5, 20) * DiffCoef);
+        }
+        public static string GenerateEnemyName()
+        {
+
+        }
+
+        private static void CalculateDiffCoef()
+        {
+            if (KillCounter <= 100) //each kill below 100 adds 5%
+            {
+                DiffCoef = 1 + KillCounter * 0.05; //this will cap out at DiffCoef of 6
+            }
+            else //each kill after 100 adds 20%
+            {
+                DiffCoef = 6 + (KillCounter-100) * 0.20; //this is the death wall.
+            }
+        }
+
     }
 }

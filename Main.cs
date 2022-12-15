@@ -10,7 +10,7 @@ namespace Robe
             Graphics.DrawTitleOptions();
 
             Player player = new Player(100, 9, "Player");
-            Enemy enemy = new Enemy(50, 5, "Dirty Goblin");
+            Enemy enemy = new Enemy(Coordinator.GenerateEnemyHealth(), Coordinator.GenerateEnemyAPower(), "Dirty Goblin");
             Enemy[] enemies = new Enemy[5];
             enemies[0] = enemy;
 
@@ -24,6 +24,14 @@ namespace Robe
             Graphics.DrawInventory();
             Graphics.DrawInventoryOptions();
             Graphics.Wipe();
+
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
+            Console.WriteLine(Coordinator.GenerateEnemyHealth());
             //Graphics.DrawVictoryRewards(5, "FireRelic");
 
             Coordinator.Battle(player, enemies);

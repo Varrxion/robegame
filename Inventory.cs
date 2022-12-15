@@ -17,6 +17,7 @@ namespace Robe
         static Inventory()
         {
             RelicPool.Add("FireRelic", false);
+            RelicPool.Add("FrostRelic", false);
             RelicPool.Add("WaterRelic", false);
             RelicPool.Add("EarthRelic", false);
             RelicPool.Add("AirRelic", false);
