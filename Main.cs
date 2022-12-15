@@ -9,17 +9,28 @@ namespace Robe
             string input = "";
             bool Quit = false;
 
-            Graphics.DrawTitle();
-            Graphics.DrawTitleOptions();
-
             Player player = new Player(1000, 10, "Player");
             List<Enemy> enemies = new List<Enemy>();
             enemies.Capacity = 5;
-
             Enemy enemy;
 
-            UserInput.TitleSelection();
-            Graphics.Wipe();
+            while (input != "1" && input != "3")
+            {
+                Graphics.DrawTitle();
+                Graphics.DrawTitleOptions();
+                input = UserInput.TitleSelection();
+                Graphics.Wipe();
+
+                if (input == "2")
+                {
+                    //draw settings when implemented
+                }
+            }
+
+            if (input == "3")
+            {
+                Quit = true;
+            }
 
             string quit = "";
             while (Quit == false)
