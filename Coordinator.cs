@@ -6,7 +6,7 @@ namespace Robe
 {
     internal static class Coordinator
     {
-        private static bool PlayerDead;
+        public static bool PlayerDead;
         private static bool EnemiesDead;
         private static int KillCounter; //used to determine difficulty
         private static double DiffCoef;
@@ -22,20 +22,41 @@ namespace Robe
             rand = new Random();
         }
 
+        public static bool Title() //returns false to play, true on quit
+        {
+            string input = "";
+            while (input != "1" && input != "3")
+            {
+                Graphics.DrawTitle();
+                Graphics.DrawTitleOptions();
+                input = UserInput.OneTwoThreeSelection();
+                Graphics.Wipe();
+
+                if (input == "2")
+                {
+                    //draw settings when implemented
+                }
+            }
+
+            if (input == "3")
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static void Battle(Player player, List<Enemy> enemies)
         {
             EnemiesDead = false;
-            while(PlayerDead==false && EnemiesDead == false)
+
+            while (PlayerDead==false && EnemiesDead == false)
             {
                 Turn(player, enemies);
                 //PrintAll(player, enemies); //just for debug
                 CheckDead(player, enemies);
-                Console.WriteLine("Press enter to continue fighting"); //these two lines just for debug
-                Console.ReadLine();
-
-                Graphics.Wipe();
-                Graphics.DrawBattle(player, enemies);
             }
+            Graphics.Wipe();
+            Graphics.DrawBattle(player, enemies);
             if (PlayerDead && EnemiesDead)
             {
                 Console.WriteLine("Battle over because everyone died."); //this should be impossible right now, but self damage attacks might be added
@@ -51,6 +72,38 @@ namespace Robe
         }
 
         public static void Turn(Player player, List<Enemy> enemies)
+        {
+            Graphics.Wipe();
+            Graphics.DrawBattle(player, enemies);
+            Graphics.DrawBattleOptions();
+
+            bool confirmedinput = false;
+
+            string input = "";
+
+            while (confirmedinput == false) //because user must confirm magic selection
+            {
+                input = UserInput.OneTwoThreeSelection();
+
+                if (input == "1")
+                {
+                    TurnAttack(player, enemies);
+                    confirmedinput = true;
+                }
+
+                if (input == "2")
+                {
+
+                }
+
+                if (input == "3")
+                {
+
+                }
+            }
+        }
+
+        public static void TurnAttack(Player player, List<Enemy> enemies)
         {
             int target = 0;
             enemies[target].TakeDamage(player.Attack());
@@ -99,6 +152,7 @@ namespace Robe
 
         public static int GenerateEnemyHealth()
         {
+            CalculateDiffCoef();
             return (int)Math.Floor(rand.Next(30, 60) * DiffCoef);
         }
         public static int GenerateEnemyAPower()

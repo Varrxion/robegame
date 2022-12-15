@@ -8,7 +8,7 @@ namespace Robe
 {
     internal static class UserInput
     {
-        public static string TitleSelection()
+        public static string OneTwoThreeSelection()
         {
             bool validinput = false;
             string userinput = "";

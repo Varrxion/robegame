@@ -93,7 +93,7 @@ namespace Robe
         public static void DrawBattleOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
-            Console.WriteLine("""/ATTACK (1)/          /DEFEND (2)/          /ITEM (3)/""");
+            Console.WriteLine("""/ATTACK (1)/           /MAGIC (2)/           /ITEM (3)/""");
         }
 
         public static void DrawDeathScreen()
