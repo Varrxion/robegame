@@ -79,9 +79,10 @@ namespace Robe
         public static void Rewards(bool boss)
         {
             Graphics.Wipe();
-            int totalgold = Inventory.GetGold() + GenerateGold(boss);
+            int gold = GenerateGold(boss);
+            int totalgold = Inventory.GetGold() + gold;
             Inventory.SetGold(totalgold);
-            Graphics.DrawVictoryRewards(totalgold, "NONE");
+            Graphics.DrawVictoryRewards(gold, "NONE");
         }
 
         public static void Turn(Player player, List<Enemy> enemies)
