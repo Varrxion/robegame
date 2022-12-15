@@ -211,10 +211,23 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
-        //public void DrawInventoryOptions()
+        public static void DrawInventoryOptions()
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/READ INFO (1)/                   /CLOSE INVENTORY (2)/""");
+        }
+
+        //public static void DrawRelicDescription(string relic)
         //{
-        //
+        //    Console.WriteLine(""" ______________________________________________________""");
+        //    Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+        //    Console.WriteLine
         //}
+
+        public static void Wipe()
+        {
+            Console.Clear();
+        }
 
     }
 }

@@ -22,6 +22,8 @@ namespace Robe
             Inventory.AddRelic("LightRelic");
             Inventory.AddRelic("DarkRelic");
             Graphics.DrawInventory();
+            Graphics.DrawInventoryOptions();
+            Graphics.Wipe();
             //Graphics.DrawVictoryRewards(5, "FireRelic");
 
             Coordinator.Battle(player, enemies);

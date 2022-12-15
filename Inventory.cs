@@ -39,7 +39,6 @@ namespace Robe
         public static void SetGold(int gold) { Gold = gold; }
         //Relics
 
-        // GetRelic will return if the relic is in the inventory or not
         public static bool GetRelic(string relic) { return RelicPool[relic]; }
         public static void SetRelic(string relic, bool has) { RelicPool[relic] = has; }
 
