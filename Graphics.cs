@@ -165,10 +165,51 @@ namespace Robe
         //
         //}
 
-        //public static void DrawInventory()
-        //{
-        //    
-        //}
+        public static void DrawInventory()
+        {
+            // Get the relics array from static class Inventory
+            List<string> relics = Inventory.GetActiveRelics();
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            int LineCount = 0;
+            const int LineGoal = 5;
+            const int RelicLineGoal = 3;
+            if (relics.Count == 0)
+            {
+                Console.WriteLine("EMPTY");
+            }
+            else
+            {
+                int StringInLineCount = 0;
+                foreach (string relic in relics)
+                {
+                    StringInLineCount++;
+                    if (StringInLineCount % RelicLineGoal != 0)
+                    {
+                        Console.Write(relic + "\t");
+                        
+                    }
+                    else if (StringInLineCount % RelicLineGoal == 0)
+                    {
+                        Console.WriteLine(relic);
+                        
+                        LineCount++;
+                    }
+                }
+                Console.WriteLine("");
+                LineCount++;
+            }
+            Console.WriteLine($"{Inventory.GetGold()} GOLD");
+            LineCount++;
+            
+            while (LineCount < LineGoal)
+            {
+                Console.WriteLine("");
+                LineCount += 1;
+            }
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+        }
 
         //public void DrawInventoryOptions()
         //{

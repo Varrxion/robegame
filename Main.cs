@@ -13,7 +13,16 @@ namespace Robe
             Enemy enemy = new Enemy(50, 5, "Dirty Goblin");
             Enemy[] enemies = new Enemy[5];
             enemies[0] = enemy;
-            Graphics.DrawVictoryRewards(5, "FireRelic");
+
+            // Add the fireRelic to the inventory
+            Inventory.AddRelic("FireRelic");
+            Inventory.AddRelic("WaterRelic");
+            Inventory.AddRelic("EarthRelic");
+            Inventory.AddRelic("AirRelic");
+            Inventory.AddRelic("LightRelic");
+            Inventory.AddRelic("DarkRelic");
+            Graphics.DrawInventory();
+            //Graphics.DrawVictoryRewards(5, "FireRelic");
 
             Coordinator.Battle(player, enemies);
         }
