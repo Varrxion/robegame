@@ -7,11 +7,12 @@ namespace Robe
     internal static class Inventory
     {
         private static int Gold = 0;
-        //private static bool[] Relics = new bool[RelicPoolSize];
 
         // Create a map where the key is the name of the relic and the value is the boolean true or false if the relic is in the inventory
         private static Dictionary<string, bool> RelicPool = new Dictionary<string, bool>();
-        
+
+        private static Dictionary<string, bool> MagicPool = new Dictionary<string, bool>();
+
         // New relics should be added in the constructor to Inventory
         // Relics subject to change, needed to add more to test something
         static Inventory()
@@ -25,6 +26,9 @@ namespace Robe
             RelicPool.Add("KeyRelic", false);
             RelicPool.Add("LightRelic", false);
             RelicPool.Add("DarkRelic", false);
+
+            MagicPool.Add("MagicMissile", false);
+            MagicPool.Add("Heal", false);
         }
 
 
@@ -36,6 +40,10 @@ namespace Robe
         //Relics
         public static bool GetRelic(string relic) { return RelicPool[relic]; }
         public static void SetRelic(string relic, bool has) { RelicPool[relic] = has; }
+
+        //Magics/Spells
+        public static bool GetMagic(string magic) { return MagicPool[magic]; }
+        public static void SetMagic(string magic, bool has) { MagicPool[magic] = has; }
 
         public static List<string> GetActiveRelics() {
             int i = 0;

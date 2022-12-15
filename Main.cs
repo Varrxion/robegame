@@ -14,6 +14,7 @@ namespace Robe
             enemies.Capacity = 5;
             Enemy enemy;
 
+
             Quit = Coordinator.Title();
 
             string PostBattleInput;
