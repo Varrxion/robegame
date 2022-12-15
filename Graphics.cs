@@ -215,12 +215,37 @@ namespace Robe
             Console.WriteLine("""/READ INFO (1)/                   /CLOSE INVENTORY (2)/""");
         }
 
-        //public static void DrawRelicDescription(string relic)
-        //{
-        //    Console.WriteLine(""" ______________________________________________________""");
-        //    Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-        //    Console.WriteLine
-        //}
+        // relics.txt must look like this:
+        // relic_name :relic_description
+        // relic_name :relic_description
+        // relic_name :relic_description
+        public static void DrawRelicDescription(string relic)
+        {
+            string output = "Not found";
+            string line;
+            StreamReader file = new StreamReader("relics.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line.StartsWith(relic))
+                {
+                    output = relic + line.Substring(relic.Length + 1);
+                    break;
+                }
+            }
+            file.Close();
+            
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine(output);
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+        }
+        
+        public static void DrawRelicDescriptionOptions()
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/CLOSE (1)/""");
+        }
 
         public static void Wipe()
         {
