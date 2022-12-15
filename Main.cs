@@ -6,6 +6,7 @@ namespace Robe
     {
         static void Main()
         {
+            MakeRelics.MakeRelicsFile();
             bool Quit = false;
 
             Player player = new Player(1000, 10, "Player");
