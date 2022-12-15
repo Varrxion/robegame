@@ -6,10 +6,11 @@ namespace Robe
     {
         static void Main()
         {
+            string input = "";
             bool Quit = false;
 
             Graphics.DrawTitle();
-            //Graphics.DrawTitleOptions();
+            Graphics.DrawTitleOptions();
 
             Player player = new Player(1000, 10, "Player");
             List<Enemy> enemies = new List<Enemy>();
@@ -17,8 +18,7 @@ namespace Robe
 
             Enemy enemy;
 
-            Console.WriteLine("Press Enter to battle");
-            Console.ReadLine();
+            UserInput.TitleSelection();
             Graphics.Wipe();
 
             string quit = "";

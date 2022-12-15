@@ -259,5 +259,12 @@ namespace Robe
             Console.Clear();
         }
 
+        public static void ClearLine()
+        {
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.BufferWidth));
+            Console.SetCursorPosition(0, Console.CursorTop - 1);
+        }
+
     }
 }
