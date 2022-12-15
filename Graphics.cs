@@ -111,10 +111,38 @@ namespace Robe
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }
 
+        public static void DrawVictoryScreen() 
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine("""     __ __  ____     __  ______   ___   ____   __ __  """);
+            Console.WriteLine("""    |  |  ||    |   /  ||      | /   \ |    \ |  |  |""");
+            Console.WriteLine("""    |  |  | |  |   /  / |      ||     || ||  )|  |  |""");
+            Console.WriteLine("""    |  |  | |  |  /  /  |_|  |_||  |  ||    / |  V  |""");
+            Console.WriteLine("""    |  V  | |  | /   \_   |  |  |  |  ||    \ |___  |""");
+            Console.WriteLine("""     \   /  |  | \     |  |  |  |     ||     \|     |""");
+            Console.WriteLine("""      \_/  |____| \____|  |__|   \___/ |__|\_||____/""");
+        }
+
         public static void DrawDeathScreenOptions()
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/RESTART (1)/                                /QUIT (2)/""");
+        }
+
+        public static void DrawVictoryRewards(int gold, string relic)
+        {
+            const int PADDING = 30;
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
+            Console.WriteLine($"{"GOLD:" + gold.ToString(),15}{"RELIC:" + relic,PADDING}");
+
+        }
+
+        public static void DrawVictoryOptions() 
+        {
+            Console.WriteLine(""" ______________________________________________________""");
+            Console.WriteLine("""/COLLECT ALL (1)/                        /CONTINUE (2)/""");
         }
 
         //public void DrawEvent()
@@ -137,9 +165,9 @@ namespace Robe
         //
         //}
 
-        //public void DrawInventory()
+        //public static void DrawInventory()
         //{
-        //
+        //    
         //}
 
         //public void DrawInventoryOptions()

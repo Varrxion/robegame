@@ -13,6 +13,7 @@ namespace Robe
             Enemy enemy = new Enemy(50, 5, "Dirty Goblin");
             Enemy[] enemies = new Enemy[5];
             enemies[0] = enemy;
+            Graphics.DrawVictoryRewards(5, "FireRelic");
 
             Coordinator.Battle(player, enemies);
         }
