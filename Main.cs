@@ -9,14 +9,17 @@ namespace Robe
             bool Quit = false;
 
             Graphics.DrawTitle();
-            Graphics.DrawTitleOptions();
+            //Graphics.DrawTitleOptions();
 
             Player player = new Player(1000, 10, "Player");
             List<Enemy> enemies = new List<Enemy>();
             enemies.Capacity = 5;
 
             Enemy enemy;
-            int count = 0;
+
+            Console.WriteLine("Press Enter to battle");
+            Console.ReadLine();
+            Graphics.Wipe();
 
             while (Quit == false)
             {
@@ -27,12 +30,9 @@ namespace Robe
 
                 Coordinator.Battle(player, enemies);
 
-                count++;
-
-                if( count == 5)
-                {
-                    Console.ReadLine();
-                }
+                Console.WriteLine("Press Enter to Continue to next battle");
+                Console.ReadLine();
+                Graphics.Wipe();
             }
 
         }
