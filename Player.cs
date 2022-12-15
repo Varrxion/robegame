@@ -16,14 +16,14 @@ namespace Robe
         }
         public int GetDefense() { return Defense; }
         private void SetDefense(int defense) { Defense = defense; }
-        private void CalcDamage(int rawdamage)
+        public override void TakeDamage(int rawdamage)
         {
             int truedamage = rawdamage - Defense;
             if (truedamage < 0)
             {
                 truedamage = 0;
             }
-            TakeDamage(truedamage);
+            base.TakeDamage(truedamage);
         }
     }
 }
