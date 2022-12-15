@@ -14,7 +14,7 @@ namespace Robe
         //Gold
         public static int GetGold() { return Gold; }
         public static void SetGold(int gold) { Gold = gold; }
-        //Fire Relic
+        //Relics
         public static bool GetRelic(int index) { return relics[index]; }
         public static void SetRelic(int index, bool has) { relics[index] = has; }
     }
