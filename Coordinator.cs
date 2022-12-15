@@ -22,8 +22,9 @@ namespace Robe
             rand = new Random();
         }
 
-        public static void Battle(Player player, Enemy[] enemies)
+        public static void Battle(Player player, List<Enemy> enemies)
         {
+            EnemiesDead = false;
             while(PlayerDead==false && EnemiesDead == false)
             {
                 Turn(player, enemies);
@@ -44,7 +45,7 @@ namespace Robe
             }
         }
 
-        public static void Turn(Player player, Enemy[] enemies)
+        public static void Turn(Player player, List<Enemy> enemies)
         {
             int target = 0;
             enemies[target].TakeDamage(player.Attack());
@@ -57,7 +58,7 @@ namespace Robe
             }
         }
 
-        private static void CheckDead(Player player, Enemy[] enemies)
+        private static void CheckDead(Player player, List<Enemy> enemies)
         {
             if (player.GetHealth() <= 0)
             {
@@ -79,7 +80,7 @@ namespace Robe
             }
         }
 
-        public static void PrintAll(Player player, Enemy[] enemies) //this function will intentionally become deprecated
+        public static void PrintAll(Player player, List<Enemy> enemies) //this function will intentionally become deprecated
         {
             player.PrintStats();
             foreach (Enemy enemy in enemies)
