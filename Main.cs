@@ -7,7 +7,6 @@ namespace Robe
         static void Main()
         {
             MakeRelics.MakeRelicsFile();
-            bool Quit = false;
 
             Player player = new Player(100, 10, "Player");
             List<Enemy> enemies = new List<Enemy>();
@@ -15,7 +14,7 @@ namespace Robe
             Enemy enemy;
 
 
-            Quit = Coordinator.Title();
+            bool Quit = Coordinator.Title();
 
             string PostBattleInput;
             while (Quit == false && Coordinator.PlayerDead == false)
