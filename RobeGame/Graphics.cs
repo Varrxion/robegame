@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RobeGame.Entities;
 
 namespace Robe
 {
@@ -10,12 +11,12 @@ namespace Robe
         {
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
-            Console.WriteLine(""" ___    ________________________________________   ___""");
-            Console.WriteLine(""" \  \   \______  \   / ___\  |   ___ \|   _____/   \  \""");
-            Console.WriteLine("""  \  \   |      _/  /  | | \ |   |_|_/|   ____/     \  \""");
-            Console.WriteLine("""   |  )  |    |  \ /   |_|  \|   |_| \|       \      |  )""");
-            Console.WriteLine("""  /__/   |____| \_\\______  /|______  /|______ \    /__/""");
-            Console.WriteLine(""" /__/        \/           \/        \/        \/   /__/""");
+            Console.WriteLine(""" ___    _________     ____   ________   _______  ___""");
+            Console.WriteLine(""" \  \   \______  \   / ___\  |   ___ \ |  ____/  \  \""");
+            Console.WriteLine("""  \--\   |      _/  |  | | | |   |_|_/ |   __/    \--\""");
+            Console.WriteLine("""   |  )  |    |  \  |  |_| | |   |_| \ |  |___     |  )""");
+            Console.WriteLine("""  /--/   |____| \_\  \_  _/  |___  _ / |______/   /--/""");
+            Console.WriteLine(""" /__/        \/        \/        \/        \/    /__/""");
             Console.WriteLine(""" ______________________________________________________""");
             Console.WriteLine("""/_____/_____/_____/_____/_____/_____/_____/_____/_____/""");
         }

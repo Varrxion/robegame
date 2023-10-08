@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Robe
+namespace RobeGame.Entities
 {
     internal class Enemy : Entity
     {

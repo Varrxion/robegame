@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Robe;
 
-namespace Robe
+namespace RobeGame.Entities
 {
     internal class Player : Entity
     {

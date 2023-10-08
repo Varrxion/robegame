@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Robe
+namespace RobeGame.Entities
 {
     public abstract class Entity
     {
@@ -30,8 +30,8 @@ namespace Robe
         public int GetAPower() { return APower; }
         private void SetAPower(int apower) { APower = apower; }
 
-        private void SetName(String name) { Name = name; }
-        public String GetName() { return Name; }
+        private void SetName(string name) { Name = name; }
+        public string GetName() { return Name; }
 
         public virtual int Attack() //redundant function but keep for now
         {

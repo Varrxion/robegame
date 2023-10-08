@@ -1,4 +1,5 @@
 ﻿using System;
+using RobeGame.Entities;
 
 namespace Robe
 {

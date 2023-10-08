@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RobeGame.Entities;
 
 namespace Robe
 {
